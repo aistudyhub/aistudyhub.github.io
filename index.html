@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Meta tag fondamentali -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Study Hub</title>
+  <meta name="description" content="Explore cutting-edge AI tools designed to elevate your study experience and unlock new potentials." />
+  <meta name="keywords" content="AI, study, learning, students, tools, education, artificial intelligence, ChatGPT, productivity, homework" />
+  <meta name="author" content="AI Study Hub Team" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TLWZS42QS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,14 +22,7 @@
     gtag('config', 'G-4TLWZS42QS');
   </script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Study Hub</title>
-  <meta name="description" content="Explore cutting-edge AI tools designed to elevate your study experience and unlock new potentials." />
-  <meta name="keywords" content="AI, study, learning, students, tools, education, artificial intelligence" />
-  <meta name="author" content="AI Study Hub Team" />
-  <meta name="robots" content="index, follow" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Stile interno -->
   <style>
     * {
       margin: 0;
@@ -27,40 +32,28 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
+      background-color: #fff;
       color: #1e1e1e;
       line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
 
     header {
-      background-color: #fff;
-      border-bottom: 1px solid #eee;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    .logo-container {
-      text-align: center;
-      flex: 1 1 100%;
-      margin: 1rem 0;
-    }
-
-    .logo-container img {
+    .logo img {
       height: 60px;
-      max-width: 200px;
-      object-fit: contain;
     }
 
-    .nav-left, .nav-right {
+    nav {
       display: flex;
       gap: 1.5rem;
     }
@@ -69,7 +62,7 @@
       text-decoration: none;
       color: #333;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
 
     nav a:hover {
@@ -79,79 +72,29 @@
     .hamburger {
       display: none;
       flex-direction: column;
+      gap: 5px;
       cursor: pointer;
     }
 
     .hamburger div {
       width: 25px;
       height: 3px;
-      background-color: #333;
-      margin: 4px 0;
+      background: #333;
     }
 
     .mobile-menu {
       display: none;
       flex-direction: column;
-      background-color: #fff;
-      width: 100%;
-      padding: 1rem 2rem;
+      background: #fff;
+      padding: 1rem;
       border-top: 1px solid #eee;
     }
 
     .mobile-menu a {
-      margin: 0.5rem 0;
-    }
-
-    @media (min-width: 768px) {
-      header {
-        flex-wrap: nowrap;
-      }
-
-      .logo-container {
-        flex: 0 0 auto;
-        order: 2;
-        margin: 0;
-      }
-
-      .nav-left {
-        order: 1;
-      }
-
-      .nav-right {
-        order: 3;
-      }
-
-      .hamburger {
-        display: none;
-      }
-
-      .mobile-menu {
-        display: none !important;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .nav-left,
-      .nav-right {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-        margin-left: auto;
-      }
-
-      .logo-container {
-        order: 1;
-      }
-
-      .hamburger {
-        order: 2;
-      }
+      margin-bottom: 1rem;
     }
 
     main {
-      flex: 1;
       max-width: 1100px;
       margin: 2rem auto;
       padding: 0 1.5rem;
@@ -160,14 +103,13 @@
     .hero {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       justify-content: space-between;
-      gap: 3rem;
-      padding: 4rem 2rem;
+      align-items: center;
       background-color: #f9fafb;
-      border-radius: 16px;
-      margin-bottom: 4rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     .hero-text {
@@ -175,48 +117,38 @@
     }
 
     .hero-text h2 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
       color: #111;
     }
 
     .hero-text p {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: #444;
-      max-width: 540px;
     }
 
     .hero-image {
-      flex: 1 1 45%;
+      flex: 1 1 40%;
       text-align: center;
     }
 
     .hero-image img {
       width: 100%;
-      max-width: 480px;
-      border-radius: 16px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-      object-fit: cover;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
 
     .about, .latest-articles {
       margin-bottom: 3rem;
     }
 
-    .about {
-      background-color: #fff;
-      border: 1px solid #eaeaea;
-      border-radius: 12px;
-      padding: 2rem;
-    }
-
-    .about h2,
-    .latest-articles h2 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
+    .about h2, .latest-articles h2 {
+      font-size: 1.8rem;
       color: #0077ff;
+      margin-bottom: 1rem;
     }
 
     .about p {
@@ -227,15 +159,16 @@
     .articles-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     article {
-      background-color: #fdfdfd;
-      border: 1px solid #e5e5e5;
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 1rem;
+      background: #fff;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
       color: inherit;
       display: flex;
@@ -244,68 +177,78 @@
 
     article:hover {
       transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     }
 
-    .image-container {
+    article img {
       width: 100%;
-      height: 140px;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .image-container img {
-      width: 100%;
-      height: 100%;
+      height: 150px;
       object-fit: cover;
-      display: block;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
 
     article h3 {
       font-size: 1.2rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
-      color: #222;
     }
 
     article p {
       font-size: 0.95rem;
       color: #666;
-      flex-grow: 1;
     }
 
     footer {
       text-align: center;
       padding: 2rem 0;
-      color: #aaa;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      color: #888;
+      background: #fafafa;
       border-top: 1px solid #eee;
-      background-color: #fafafa;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text, .hero-image {
+        flex: 1 1 100%;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <div class="nav-left">
-    <nav>
-      <a href="about.html">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </div>
+  <a href="#" class="logo">
+    <img src="images/logo.png" alt="AI Study Hub Logo">
+  </a>
 
-  <div class="logo-container">
-    <a href="#"><img src="../images/logo.png" alt="AI Study Hub Logo" /></a>
-  </div>
-
-  <div class="nav-right">
-    <nav>
-      <a href="#">Home</a>
-      <a href="categories.html">Categories</a>
-    </nav>
-  </div>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Home</a>
+    <a href="categories.html">Categories</a>
+  </nav>
 
   <div class="hamburger" onclick="toggleMobileMenu()">
     <div></div>
@@ -315,10 +258,10 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#">Home</a>
-  <a href="categories.html">Categories</a>
   <a href="about.html">About</a>
   <a href="#">Contact</a>
+  <a href="#">Home</a>
+  <a href="categories.html">Categories</a>
 </div>
 
 <main>
@@ -328,15 +271,13 @@
       <p>Discover cutting-edge AI tools designed to enhance your study experience, boost productivity, and unlock your full potential.</p>
     </div>
     <div class="hero-image">
-      <img src="images/hero-image.jpeg" alt="Student using AI tools to study" />
+      <img src="images/hero-image.jpeg" alt="AI tools helping student">
     </div>
   </section>
 
   <section class="about">
     <h2>About Us</h2>
-    <p>
-      AI Study Hub is a platform for ambitious students who want to use artificial intelligence to improve their learning. We provide exclusive articles, in-depth guides, and reviews of the best AI tools to support your educational journey.
-    </p>
+    <p>AI Study Hub is a platform for ambitious students who want to use artificial intelligence to improve their learning. We provide exclusive articles, in-depth guides, and reviews of the best AI tools to support your educational journey.</p>
   </section>
 
   <section class="latest-articles">
@@ -344,29 +285,21 @@
     <div class="articles-grid">
       <a href="articles/how-AI-helps-students-learn-faster.html">
         <article>
-          <div class="image-container">
-            <img src="images/Studente concentrato con tecnologia AI.png" alt="Studente concentrato con tecnologia AI" />
-          </div>
+          <img src="images/Studente concentrato con tecnologia AI.png" alt="Student using AI">
           <h3>How AI Helps Students Learn Faster</h3>
           <p>Explore how artificial intelligence can improve learning speed and efficiency.</p>
         </article>
       </a>
-
       <a href="articles/top-5-AI-tools-for-homework-assistance.html">
         <article>
-          <div class="image-container">
-            <img src="images/grammarly.jpeg" alt="Grammarly logo" />
-          </div>
+          <img src="images/grammarly.jpeg" alt="Grammarly AI">
           <h3>Top 5 AI Tools for Homework Assistance</h3>
           <p>Discover the best AI tools to help with school assignments and research.</p>
         </article>
       </a>
-
       <a href="articles/using-chat-gpt-to-enhance-your-study-sessions.html">
         <article>
-          <div class="image-container">
-            <img src="images/chatgpt.jpeg" alt="ChatGPT interface" />
-          </div>
+          <img src="images/chatgpt.jpeg" alt="ChatGPT">
           <h3>Using ChatGPT to Enhance Study Sessions</h3>
           <p>Learn how to use ChatGPT to explain concepts, generate notes, and stay focused.</p>
         </article>
@@ -382,7 +315,7 @@
 <script>
   function toggleMobileMenu() {
     const menu = document.getElementById("mobileMenu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    menu.classList.toggle("show");
   }
 </script>
 
