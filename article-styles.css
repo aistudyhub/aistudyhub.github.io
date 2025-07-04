@@ -140,4 +140,23 @@ footer {
   .image-placeholder {
     height: 240px; /* più alta anche in mobile */
   }
+.related-articles ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 1.5em;
 }
+
+.related-articles li {
+  margin: 0.5em 0;
+}
+
+.related-articles a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.related-articles a:hover {
+  text-decoration: underline;
+}
+
