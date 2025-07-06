@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta tag fondamentali -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Study Hub</title>
-  <meta name="description" content="Explore cutting-edge AI tools designed to elevate your study experience and unlock new potentials." />
-  <meta name="keywords" content="AI, study, learning, students, tools, education, artificial intelligence, ChatGPT, productivity, homework" />
+  <title>AI Study Hub - Enhance Learning with AI Tools</title>
+  <meta name="description" content="Discover how artificial intelligence can boost your study habits, improve productivity, and help students achieve better academic results." />
+  <meta name="keywords" content="AI study tools, ChatGPT, AI education, student productivity, AI homework help, artificial intelligence learning" />
   <meta name="author" content="AI Study Hub Team" />
   <meta name="robots" content="index, follow" />
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
@@ -22,7 +21,6 @@
     gtag('config', 'G-4TLWZS42QS');
   </script>
 
-  <!-- Stile interno -->
   <style>
     * {
       margin: 0;
@@ -50,7 +48,7 @@
     }
 
     .logo img {
-      height: 60px;
+      height: 80px;
     }
 
     nav {
@@ -61,37 +59,12 @@
     nav a {
       text-decoration: none;
       color: #333;
-      font-weight: 500;
+      font-weight: 600;
       transition: color 0.3s;
     }
 
     nav a:hover {
       color: #0077ff;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background: #333;
-    }
-
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background: #fff;
-      padding: 1rem;
-      border-top: 1px solid #eee;
-    }
-
-    .mobile-menu a {
-      margin-bottom: 1rem;
     }
 
     main {
@@ -116,11 +89,11 @@
       flex: 1 1 50%;
     }
 
-    .hero-text h2 {
-      font-size: 2.5rem;
+    .hero-text h1 {
+      font-size: 2.8rem;
       font-weight: 700;
-      margin-bottom: 1rem;
       color: #111;
+      margin-bottom: 1rem;
     }
 
     .hero-text p {
@@ -141,19 +114,14 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
 
-    .about, .latest-articles {
-      margin-bottom: 3rem;
-    }
-
-    .about h2, .latest-articles h2 {
+    .section-title {
       font-size: 1.8rem;
       color: #0077ff;
       margin-bottom: 1rem;
     }
 
-    .about p {
-      font-size: 1rem;
-      color: #555;
+    .about, .latest-articles {
+      margin-bottom: 3rem;
     }
 
     .articles-grid {
@@ -163,12 +131,12 @@
     }
 
     article {
+      background: #fff;
       border: 1px solid #eee;
       border-radius: 10px;
       padding: 1rem;
-      background: #fff;
       box-shadow: 0 5px 10px rgba(0,0,0,0.03);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: 0.3s;
       text-decoration: none;
       color: inherit;
       display: flex;
@@ -207,101 +175,64 @@
       background: #fafafa;
       border-top: 1px solid #eee;
     }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .mobile-menu.show {
-        display: flex;
-      }
-
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-text, .hero-image {
-        flex: 1 1 100%;
-      }
-
-      .hero-image img {
-        max-width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
 
 <header>
-  <a href="#" class="logo">
-    <img src="images/logo.png" alt="AI Study Hub Logo">
-  </a>
-
-  <nav>
-    <a href="about.html">About</a>
-    <a href="#">Contact</a>
-    <a href="#">Home</a>
-    <a href="categories.html">Categories</a>
-  </nav>
-
-  <div class="hamburger" onclick="toggleMobileMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="AI Study Hub Logo">
+    </a>
   </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="categories.html">Categories</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="about.html">About</a>
-  <a href="#">Contact</a>
-  <a href="#">Home</a>
-  <a href="categories.html">Categories</a>
-</div>
 
 <main>
   <section class="hero">
     <div class="hero-text">
-      <h2>Boost Your Learning with AI</h2>
-      <p>Discover cutting-edge AI tools designed to enhance your study experience, boost productivity, and unlock your full potential.</p>
+      <h1>Boost Your Learning with AI</h1>
+      <p>Use smart tools to study faster, retain more, and reduce stress. Discover the best AI apps and techniques for students like you.</p>
     </div>
     <div class="hero-image">
-      <img src="images/hero-image.jpeg" alt="AI tools helping student">
+      <img src="images/hero-image.jpeg" alt="AI helping students">
     </div>
   </section>
 
   <section class="about">
-    <h2>About Us</h2>
-    <p>AI Study Hub is a platform for ambitious students who want to use artificial intelligence to improve their learning. We provide exclusive articles, in-depth guides, and reviews of the best AI tools to support your educational journey.</p>
+    <h2 class="section-title">About AI Study Hub</h2>
+    <p>We help students embrace artificial intelligence to improve study habits and academic performance. From ChatGPT tips to AI flashcards, we share everything you need to succeed.</p>
   </section>
 
   <section class="latest-articles">
-    <h2>Latest Articles</h2>
+    <h2 class="section-title">Latest Articles</h2>
     <div class="articles-grid">
       <a href="articles/how-AI-helps-students-learn-faster.html">
         <article>
           <img src="images/Studente concentrato con tecnologia AI.png" alt="Student using AI">
           <h3>How AI Helps Students Learn Faster</h3>
-          <p>Explore how artificial intelligence can improve learning speed and efficiency.</p>
+          <p>Explore the power of artificial intelligence in accelerating your learning.</p>
         </article>
       </a>
+
       <a href="articles/top-5-AI-tools-for-homework-assistance.html">
         <article>
-          <img src="images/grammarly.jpeg" alt="Grammarly AI">
+          <img src="images/grammarly.jpeg" alt="AI tool Grammarly">
           <h3>Top 5 AI Tools for Homework Assistance</h3>
-          <p>Discover the best AI tools to help with school assignments and research.</p>
+          <p>Our top picks of AI apps that help with school assignments and essays.</p>
         </article>
       </a>
+
       <a href="articles/using-chat-gpt-to-enhance-your-study-sessions.html">
         <article>
-          <img src="images/chatgpt.jpeg" alt="ChatGPT">
+          <img src="images/chatgpt.jpeg" alt="Using ChatGPT">
           <h3>Using ChatGPT to Enhance Study Sessions</h3>
-          <p>Learn how to use ChatGPT to explain concepts, generate notes, and stay focused.</p>
+          <p>Discover how ChatGPT can help you revise, organize notes, and stay focused.</p>
         </article>
       </a>
     </div>
@@ -311,13 +242,6 @@
 <footer>
   &copy; 2025 AI Study Hub. All rights reserved.
 </footer>
-
-<script>
-  function toggleMobileMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.classList.toggle("show");
-  }
-</script>
 
 </body>
 </html>
