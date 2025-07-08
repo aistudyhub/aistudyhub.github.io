@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -48,7 +48,8 @@
     }
 
     .logo img {
-      height: 80px;
+      height: 120px; /* Aumentato da 80px */
+      width: auto;
     }
 
     nav {
@@ -81,8 +82,9 @@
       background-color: #f9fafb;
       padding: 3rem 2rem;
       border-radius: 12px;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem; /* diminuito per dare spazio al banner */
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      gap: 3rem; /* Aumenta lo spazio tra testo e immagine */
     }
 
     .hero-text {
@@ -112,6 +114,43 @@
       height: auto;
       border-radius: 10px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    /* Banner CustomGPT */
+    .banner {
+      background: linear-gradient(90deg, #0077ff, #00d2ff);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 20px rgba(0, 119, 255, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .banner:hover {
+      background: linear-gradient(90deg, #005ecc, #0099cc);
+      cursor: pointer;
+    }
+
+    .banner img {
+      max-height: 70px;
+      width: auto;
+      margin-right: 1.5rem;
+    }
+
+    .banner a {
+      font-size: 1.3rem;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.3s;
+    }
+
+    .banner a:hover {
+      color: #d0f0ff;
     }
 
     .section-title {
@@ -182,7 +221,7 @@
 <header>
   <div class="logo">
     <a href="index.html">
-      <img src="images/logo.png" alt="AI Study Hub Logo">
+      <img src="images/logo.png" alt="AI Study Hub Logo" />
     </a>
   </div>
   <nav>
@@ -200,9 +239,15 @@
       <p>Use smart tools to study faster, retain more, and reduce stress. Discover the best AI apps and techniques for students like you.</p>
     </div>
     <div class="hero-image">
-      <img src="images/hero-image.jpeg" alt="AI helping students">
+      <img src="images/hero-image.jpeg" alt="AI helping students" />
     </div>
   </section>
+
+  <!-- Banner CustomGPT -->
+  <a href="https://customgpt.firstpromoter.com?sref=6mp1byd" target="_blank" rel="noopener" class="banner" aria-label="CustomGPT AI Chatbot Builder Affiliate Link">
+    <img src="images/customgpt.ai.png" alt="CustomGPT AI Logo" />
+    <span>Build Your Own AI Chatbot with CustomGPT - Try It Now!</span>
+  </a>
 
   <section class="about">
     <h2 class="section-title">About AI Study Hub</h2>
@@ -214,7 +259,7 @@
     <div class="articles-grid">
       <a href="articles/how-AI-helps-students-learn-faster.html">
         <article>
-          <img src="images/Studente concentrato con tecnologia AI.png" alt="Student using AI">
+          <img src="images/Studente concentrato con tecnologia AI.png" alt="Student using AI" />
           <h3>How AI Helps Students Learn Faster</h3>
           <p>Explore the power of artificial intelligence in accelerating your learning.</p>
         </article>
@@ -222,7 +267,7 @@
 
       <a href="articles/top-5-AI-tools-for-homework-assistance.html">
         <article>
-          <img src="images/grammarly.jpeg" alt="AI tool Grammarly">
+          <img src="images/grammarly.jpeg" alt="AI tool Grammarly" />
           <h3>Top 5 AI Tools for Homework Assistance</h3>
           <p>Our top picks of AI apps that help with school assignments and essays.</p>
         </article>
@@ -230,7 +275,7 @@
 
       <a href="articles/using-chat-gpt-to-enhance-your-study-sessions.html">
         <article>
-          <img src="images/chatgpt.jpeg" alt="Using ChatGPT">
+          <img src="images/chatgpt.jpeg" alt="Using ChatGPT" />
           <h3>Using ChatGPT to Enhance Study Sessions</h3>
           <p>Discover how ChatGPT can help you revise, organize notes, and stay focused.</p>
         </article>
@@ -245,4 +290,3 @@
 
 </body>
 </html>
-
