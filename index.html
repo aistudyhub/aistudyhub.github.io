@@ -9,17 +9,7 @@
   <meta name="author" content="AI Study Hub Team" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TLWZS42QS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-4TLWZS42QS');
-  </script>
 
   <style>
     * {
@@ -36,23 +26,19 @@
     }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
       background-color: #fff;
       border-bottom: 1px solid #eee;
+      padding: 1rem 1.5rem;
       position: sticky;
       top: 0;
       z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .logo img {
-      height: 100px; /* aumento dimensione logo */
-      transition: transform 0.3s ease;
-    }
-    .logo img:hover {
-      transform: scale(1.05);
+      height: 90px;
     }
 
     nav {
@@ -69,6 +55,33 @@
 
     nav a:hover {
       color: #0077ff;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      background: #fff;
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #eee;
+    }
+
+    .mobile-nav.open {
+      display: flex;
     }
 
     main {
@@ -91,7 +104,7 @@
 
     .hero-text {
       flex: 1 1 50%;
-      margin-right: 2rem; /* aumenta spazio tra testo e immagine */
+      margin-bottom: 2rem;
     }
 
     .hero-text h1 {
@@ -119,34 +132,24 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
 
-    /* Banner CustomGPT */
     .banner-container {
-      max-width: 1100px;
-      margin: 0 auto 3rem auto;
-      padding: 1rem 0;
       text-align: center;
-      background-color: #fff; /* bianco, nessuna sezione blu */
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      margin: 2rem auto;
     }
 
     .banner-container a {
       display: inline-block;
-      max-width: 800px;
       width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
     .banner-container img {
       width: 100%;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .banner-container img:hover {
-      transform: scale(1.03);
+      display: block;
     }
 
     .section-title {
@@ -210,16 +213,67 @@
       background: #fafafa;
       border-top: 1px solid #eee;
     }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        text-align: center;
+      }
+
+      .hero-text {
+        margin-bottom: 2rem;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+      }
+
+      .banner-container a {
+        width: 100%;
+      }
+    }
   </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+
+      hamburger.addEventListener('click', () => {
+        mobileNav.classList.toggle('open');
+        hamburger.classList.toggle('open');
+      });
+    });
+  </script>
 </head>
 <body>
 
 <header>
   <div class="logo">
     <a href="index.html">
-      <img src="images/logo.png" alt="AI Study Hub Logo" />
+      <img src="images/logo.png" alt="AI Study Hub Logo">
     </a>
   </div>
+
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -228,6 +282,13 @@
   </nav>
 </header>
 
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="categories.html">Categories</a>
+  <a href="contact.html">Contact</a>
+</div>
+
 <main>
   <section class="hero">
     <div class="hero-text">
@@ -235,16 +296,15 @@
       <p>Use smart tools to study faster, retain more, and reduce stress. Discover the best AI apps and techniques for students like you.</p>
     </div>
     <div class="hero-image">
-      <img src="images/hero-image.jpeg" alt="AI helping students" />
+      <img src="images/hero-image.jpeg" alt="AI helping students">
     </div>
   </section>
 
-  <!-- Banner inserito qui sotto l'hero in posizione elegante e grande -->
-  <section class="banner-container">
-    <a href="https://customgpt.firstpromoter.com?sref=6mp1byd" target="_blank" rel="noopener noreferrer">
-      <img src="images/customgpt.png" alt="CustomGPT AI Banner" />
+  <div class="banner-container">
+    <a href="https://customgpt.ai/?fpr=tommaso48" target="_blank">
+      <img src="images/customgpt.png" alt="CustomGPT.ai Banner">
     </a>
-  </section>
+  </div>
 
   <section class="about">
     <h2 class="section-title">About AI Study Hub</h2>
@@ -256,7 +316,7 @@
     <div class="articles-grid">
       <a href="articles/how-AI-helps-students-learn-faster.html">
         <article>
-          <img src="images/Studente concentrato con tecnologia AI.png" alt="Student using AI" />
+          <img src="images/Studente concentrato con tecnologia AI.png" alt="Student using AI">
           <h3>How AI Helps Students Learn Faster</h3>
           <p>Explore the power of artificial intelligence in accelerating your learning.</p>
         </article>
@@ -264,7 +324,7 @@
 
       <a href="articles/top-5-AI-tools-for-homework-assistance.html">
         <article>
-          <img src="images/grammarly.jpeg" alt="AI tool Grammarly" />
+          <img src="images/grammarly.jpeg" alt="AI tool Grammarly">
           <h3>Top 5 AI Tools for Homework Assistance</h3>
           <p>Our top picks of AI apps that help with school assignments and essays.</p>
         </article>
@@ -272,7 +332,7 @@
 
       <a href="articles/using-chat-gpt-to-enhance-your-study-sessions.html">
         <article>
-          <img src="images/chatgpt.jpeg" alt="Using ChatGPT" />
+          <img src="images/chatgpt.jpeg" alt="Using ChatGPT">
           <h3>Using ChatGPT to Enhance Study Sessions</h3>
           <p>Discover how ChatGPT can help you revise, organize notes, and stay focused.</p>
         </article>
