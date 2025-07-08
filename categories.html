@@ -19,6 +19,17 @@
   <meta name="robots" content="index, follow" />
 
   <link rel="stylesheet" href="article-styles.css" />
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+
+      hamburger.addEventListener('click', () => {
+        mobileNav.classList.toggle('open');
+        hamburger.classList.toggle('open');
+      });
+    });
+  </script>
 </head>
 <body>
    <header>
@@ -41,14 +52,7 @@
   </nav>
 </header>
 
-<header>
-  <h1>AI Study Hub</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="categories.html">Categories</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+
 
 <main>
   <article>
