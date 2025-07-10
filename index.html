@@ -4,25 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Study Hub — Elevate Your Learning</title>
-  <meta name="description" content="Smart AI tools to boost your learning." />
-  <meta name="keywords" content="AI, study tools, productivity, students" />
-  <meta name="author" content="AI Study Hub Team" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Font Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
   <style>
-    /* ===== Base Reset ===== */
+    :root {
+      --bg: #0e0e0e;
+      --fg: #ffffff;
+      --accent: #007aff;
+      --card-bg: #1b1b1b;
+      --text-muted: #aaa;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background-color: #f4f7fc; color: #1f1f1f; }
-
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+    }
     a { text-decoration: none; color: inherit; }
-    img { display: block; max-width: 100%; }
-
-    /* ===== Header ===== */
     header {
-      background: #ffffff;
+      background: #111;
       padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
@@ -30,68 +29,45 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-
     .logo img {
-      height: 60px;
+      height: 80px;
     }
-
     nav {
       display: flex;
       gap: 1.5rem;
     }
-
     nav a {
       font-weight: 600;
-      color: #333;
-      transition: color 0.3s ease;
+      color: var(--fg);
     }
-
-    nav a:hover {
-      color: #007aff;
-    }
-
-    /* ===== Hamburger Menu ===== */
     .hamburger {
       display: none;
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
     }
-
     .hamburger div {
       width: 25px;
       height: 3px;
-      background-color: #333;
+      background-color: var(--fg);
       border-radius: 2px;
     }
-
     .mobile-nav {
       display: none;
       flex-direction: column;
       padding: 1rem;
-      background: #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      background: #111;
     }
-
     .mobile-nav.open {
       display: flex;
-      animation: slideDown 0.3s ease-out;
     }
-
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ===== Hero Section ===== */
     .hero {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
-      background: linear-gradient(135deg, #007aff 0%, #00d4ff 100%);
-      color: #fff;
+      background: linear-gradient(135deg, #007aff, #00d4ff);
+      color: #000;
       padding: 3rem 2rem;
       border-radius: 20px;
       margin: 2rem auto;
@@ -99,234 +75,120 @@
       align-items: center;
       justify-content: space-between;
     }
-
-    .hero-text {
-      flex: 1;
-      min-width: 300px;
-    }
-
     .hero-text h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+      font-size: 3rem;
       font-weight: 700;
     }
-
     .hero-text p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+      margin-top: 1rem;
+      font-size: 1.2rem;
     }
-
     .hero-btn {
-      display: inline-block;
       margin-top: 1.5rem;
-      background: #fff;
-      color: #007aff;
+      background: #000;
+      color: var(--fg);
       padding: 0.75rem 1.5rem;
       border-radius: 12px;
       font-weight: 600;
-      transition: transform 0.2s ease, background 0.3s ease;
     }
-
-    .hero-btn:hover {
-      background: #f0f0f0;
-      transform: scale(1.05);
-    }
-
-    .hero-image {
-      flex: 1;
-      min-width: 280px;
-      text-align: center;
-    }
-
-    .hero-image img {
-      max-width: 350px;
-      border-radius: 16px;
-      transition: transform 0.4s ease;
-    }
-
-    .hero-image img:hover {
-      transform: scale(1.03);
-    }
-
-    /* ===== Articles Grid ===== */
-    .section-title {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin: 2rem 0 1rem;
-      color: #007aff;
-      text-align: center;
-    }
-
     .articles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      padding: 0 1rem;
+      padding: 2rem;
       max-width: 1200px;
       margin: auto;
     }
-
     article {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      background: var(--card-bg);
+      border-radius: 12px;
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
     }
-
-    article:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-    }
-
     article img {
       width: 100%;
       height: 180px;
       object-fit: cover;
     }
-
     .article-content {
       padding: 1rem;
     }
-
     .article-content h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
     }
-
     .article-content p {
       font-size: 0.95rem;
-      color: #555;
+      color: var(--text-muted);
     }
-
-    /* ===== Banner ===== */
-    .banner-container {
-      text-align: center;
-      margin: 2rem auto;
-    }
-
-    .banner-container a {
-      display: inline-block;
-      max-width: 900px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease;
-    }
-
-    .banner-container a:hover {
-      transform: translateY(-5px);
-    }
-
-    /* ===== Footer ===== */
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: #ffffff;
-      color: #999;
-      font-size: 0.9rem;
-      margin-top: 3rem;
-      border-top: 1px solid #eee;
+      color: #555;
     }
-
-    /* ===== Responsive ===== */
     @media (max-width: 768px) {
       nav { display: none; }
       .hamburger { display: flex; }
-      .hero { flex-direction: column; text-align: center; }
-      .hero-text h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
-
-<!-- ===== Header ===== -->
-<header>
-  <div class="logo">
-    <a href="index.html"><img src="images/logo.png" alt="AI Study Hub Logo" /></a>
-  </div>
-  <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
-  <nav class="desktop-nav">
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="AI Study Hub Logo" /></a>
+    </div>
+    <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="categories.html">Categories</a>
+      <a href="tools.html">AI Tools</a>
+    </nav>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="categories.html">Categories</a>
     <a href="tools.html">AI Tools</a>
-  </nav>
-</header>
-<div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="categories.html">Categories</a>
-  <a href="tools.html">AI Tools</a>
-</div>
-
-<!-- ===== Hero Section ===== -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Supercharge Your Study Sessions</h1>
-    <p>Use smart AI tools to boost productivity, retain more, and study faster — with less stress.</p>
-    <a class="hero-btn" href="tools.html">Try Our AI Tools</a>
   </div>
-  <div class="hero-image">
-    <img src="images/hero-image.jpeg" alt="Student using AI" />
-  </div>
-</section>
 
-<!-- ===== Banner ===== -->
-<div class="banner-container">
-  <a href="https://customgpt.ai/?fpr=tommaso48" target="_blank">
-    <img src="images/customgpt.png" alt="CustomGPT Banner" />
-  </a>
-</div>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Supercharge Your Study Sessions</h1>
+      <p>Use smart AI tools to boost productivity, retain more, and study faster — with less stress.</p>
+      <a class="hero-btn" href="tools.html">Try Our AI Tools</a>
+    </div>
+    <div class="hero-image">
+      <img src="images/hero-image.png" alt="AI Study Image" />
+    </div>
+  </section>
 
-<!-- ===== Articles Section ===== -->
-<section>
-  <h2 class="section-title">Latest Articles</h2>
-  <div class="articles-grid">
-    <a href="articles/how-AI-helps-students-learn-faster.html">
-      <article>
-        <img src="images/Studente concentrato con tecnologia AI.png" alt="AI student" />
-        <div class="article-content">
-          <h3>How AI Helps Students Learn Faster</h3>
-          <p>Explore the power of AI in enhancing focus and comprehension.</p>
-        </div>
-      </article>
-    </a>
-    <a href="articles/top-5-AI-tools-for-homework-assistance.html">
-      <article>
-        <img src="images/grammarly.jpeg" alt="AI tools" />
-        <div class="article-content">
-          <h3>Top 5 AI Tools for Homework</h3>
-          <p>Discover the best AI apps to ace assignments without stress.</p>
-        </div>
-      </article>
-    </a>
-    <a href="articles/using-chat-gpt-to-enhance-your-study-sessions.html">
-      <article>
-        <img src="images/chatgpt.jpeg" alt="ChatGPT study" />
-        <div class="article-content">
-          <h3>Using ChatGPT for Smart Studying</h3>
-          <p>Tips and tricks to use ChatGPT like your personal tutor.</p>
-        </div>
-      </article>
-    </a>
-  </div>
-</section>
+  <section>
+    <h2 style="text-align:center; margin-top:2rem; font-size:1.8rem; color:#00d4ff">Latest Articles</h2>
+    <div class="articles-grid">
+      <!-- Repeat 10 articles -->
+      <article><img src="images/1.png" /><div class="article-content"><h3>Article 1</h3><p>Summary text 1.</p></div></article>
+      <article><img src="images/2.png" /><div class="article-content"><h3>Article 2</h3><p>Summary text 2.</p></div></article>
+      <article><img src="images/3.png" /><div class="article-content"><h3>Article 3</h3><p>Summary text 3.</p></div></article>
+      <article><img src="images/4.png" /><div class="article-content"><h3>Article 4</h3><p>Summary text 4.</p></div></article>
+      <article><img src="images/5.png" /><div class="article-content"><h3>Article 5</h3><p>Summary text 5.</p></div></article>
+      <article><img src="images/6.png" /><div class="article-content"><h3>Article 6</h3><p>Summary text 6.</p></div></article>
+      <article><img src="images/7.png" /><div class="article-content"><h3>Article 7</h3><p>Summary text 7.</p></div></article>
+      <article><img src="images/8.png" /><div class="article-content"><h3>Article 8</h3><p>Summary text 8.</p></div></article>
+      <article><img src="images/9.png" /><div class="article-content"><h3>Article 9</h3><p>Summary text 9.</p></div></article>
+      <article><img src="images/10.png" /><div class="article-content"><h3>Article 10</h3><p>Summary text 10.</p></div></article>
+    </div>
+  </section>
 
-<!-- ===== Footer ===== -->
-<footer>
-  &copy; 2025 AI Study Hub. All rights reserved.
-</footer>
+  <footer>
+    &copy; 2025 AI Study Hub. All rights reserved.
+  </footer>
 
-<!-- ===== JS for Mobile Nav ===== -->
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const mobileNav = document.getElementById("mobileNav");
-  hamburger.addEventListener("click", () => {
-    mobileNav.classList.toggle("open");
-  });
-</script>
-
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobileNav");
+    hamburger.addEventListener("click", () => {
+      mobileNav.classList.toggle("open");
+    });
+  </script>
 </body>
 </html>
