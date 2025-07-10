@@ -1,15 +1,6 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4TLWZS42QS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4TLWZS42QS');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Categories - AI Study Hub</title>
@@ -18,8 +9,196 @@
   <meta name="author" content="AI Study Hub Team" />
   <meta name="robots" content="index, follow" />
 
-  <link rel="stylesheet" href="article-styles.css" />
-   <script>
+ 
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #161b22;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .logo img {
+      height: 120px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #c9d1d9;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #c9d1d9;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100vh;
+      background: #161b22;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .mobile-nav.open {
+      right: 0;
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      color: #c9d1d9;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: #58a6ff;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .category-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(88,166,255,0.6);
+      border-color: #58a6ff;
+    }
+
+    .category-card img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
+
+    .category-card h3 {
+      font-size: 1.5rem;
+      color: #58a6ff;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    .category-card ul {
+      list-style: disc;
+      padding-left: 1.3rem;
+      text-align: left;
+      color: #c9d1d9;
+      font-size: 1rem;
+    }
+
+    .category-card ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .category-card ul li a {
+      color: #8b949e;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .category-card ul li a:hover {
+      color: #58a6ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      color: #8b949e;
+      background: #0d1117;
+      border-top: 1px solid #30363d;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
       const hamburger = document.getElementById('hamburger');
       const mobileNav = document.getElementById('mobileNav');
@@ -33,75 +212,92 @@
 </head>
 <body>
   <header>
-  <div class="logo">
-    <a href="index.html">
-      <img src="images/logo.png" alt="AI Study Hub Logo">
-    </a>
-  </div>
+    <div class="logo">
+      <a href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="260" height="60" viewBox="0 0 260 60">
+          <rect width="260" height="60" rx="10" fill="#161b22"/>
+          <g transform="translate(20,10)">
+            <path d="M20 5a5 5 0 0 1 10 0v5a5 5 0 0 1-10 0V5z
+                     M10 20a5 5 0 0 1 10 0v5a5 5 0 0 1-10 0v-5z
+                     M30 20a5 5 0 0 1 10 0v5a5 5 0 0 1-10 0v-5z
+                     M20 35a5 5 0 0 1 10 0v5a5 5 0 0 1-10 0v-5z" 
+                  fill="white"/>
+            <line x1="25" y1="10" x2="25" y2="20" stroke="white" stroke-width="2"/>
+            <line x1="15" y1="25" x2="25" y2="25" stroke="white" stroke-width="2"/>
+            <line x1="35" y1="25" x2="45" y2="25" stroke="white" stroke-width="2"/>
+            <line x1="25" y1="30" x2="25" y2="40" stroke="white" stroke-width="2"/>
+          </g>
+          <text x="80" y="38" font-family="Inter, sans-serif" font-size="24" fill="white" font-weight="700">
+            AI Study Hub
+          </text>
+        </svg>
+      </a>
+    </div>
 
-  <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-  <nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="categories.html">Categories</a>
+    </nav>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="categories.html">Categories</a>
-  </nav>
-</header>
+  </div>
 
-
-   <div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="categories.html">Categories</a>
-</div>
-
-
-
-<main>
-  <article>
+  <main>
     <h2>Explore by Category</h2>
+    <div class="categories-grid">
 
-    <section style="margin-top: 2rem;">
-      <h3 style="color: #0077ff; font-size: 1.5rem; margin-bottom: 1rem;">🧠 AI for Studying</h3>
-      <ul style="list-style: disc; padding-left: 1.5rem;">
-        <li><a href="articles/how-AI-helps-students-learn-faster.html">How AI Helps Students Learn Faster</a></li>
-        <li><a href="articles/using-chat-gpt-to-enhance-your-study-sessions.html">Using ChatGPT to Enhance Your Study Sessions</a></li>
-         <li><a href="articles/how-AI-is-changing-the-way-students-learn.html">How AI Is Changing The Way Students Learn</a></li>
-      </ul>
-    </section>
+      <a href="articles/how-AI-helps-students-learn-faster.html" class="category-card">
+        <img src="images/category-ai-study.jpg" alt="AI for Studying">
+        <h3>🧠 AI for Studying</h3>
+        <ul>
+          <li><a href="articles/how-AI-helps-students-learn-faster.html">How AI Helps Students Learn Faster</a></li>
+          <li><a href="articles/using-chat-gpt-to-enhance-your-study-sessions.html">Using ChatGPT to Enhance Your Study Sessions</a></li>
+          <li><a href="articles/how-AI-is-changing-the-way-students-learn.html">How AI Is Changing The Way Students Learn</a></li>
+        </ul>
+      </a>
 
-    <section style="margin-top: 2rem;">
-      <h3 style="color: #0077ff; font-size: 1.5rem; margin-bottom: 1rem;">⚙️ AI Tools for Students</h3>
-      <ul style="list-style: disc; padding-left: 1.5rem;">
-        <li><a href="articles/top-5-AI-tools-for-homework-assistance.html">Top 5 AI Tools for Homework Assistance</a></li>
-        <li><a href="articles/top-AI-productivity-tools-for-students-in-2025.html">Top AI Productivity Tools for Students in 2025</a></li>
-      </ul>
-    </section>
+      <a href="articles/top-5-AI-tools-for-homework-assistance.html" class="category-card">
+        <img src="images/category-ai-tools.jpg" alt="AI Tools for Students">
+        <h3>⚙️ AI Tools for Students</h3>
+        <ul>
+          <li><a href="articles/top-5-AI-tools-for-homework-assistance.html">Top 5 AI Tools for Homework Assistance</a></li>
+          <li><a href="articles/top-AI-productivity-tools-for-students-in-2025.html">Top AI Productivity Tools for Students in 2025</a></li>
+        </ul>
+      </a>
 
-    <section style="margin-top: 2rem;">
-      <h3 style="color: #0077ff; font-size: 1.5rem; margin-bottom: 1rem;">📈 AI & Education Trends</h3>
-      <ul style="list-style: disc; padding-left: 1.5rem;">
-        <li><a href="articles/the-future-of-AI-in-education-trends-to-watch.html">The Future of AI in Education: Trends to Watch</a></li>
-      </ul>
-    </section>
+      <a href="articles/the-future-of-AI-in-education-trends-to-watch.html" class="category-card">
+        <img src="images/category-ai-trends.jpg" alt="AI & Education Trends">
+        <h3>📈 AI & Education Trends</h3>
+        <ul>
+          <li><a href="articles/the-future-of-AI-in-education-trends-to-watch.html">The Future of AI in Education: Trends to Watch</a></li>
+        </ul>
+      </a>
 
-    <section style="margin-top: 2rem;">
-      <h3 style="color: #0077ff; font-size: 1.5rem; margin-bottom: 1rem;">📚 Study Guides & Tips</h3>
-      <ul style="list-style: disc; padding-left: 1.5rem;">
-        <li><a href="articles/chatgpt-study-tips.html">ChatGPT Study Tips</a></li>
-      </ul>
-    </section>
+      <a href="articles/chatgpt-study-tips.html" class="category-card">
+        <img src="images/category-study-tips.jpg" alt="Study Guides & Tips">
+        <h3>📚 Study Guides & Tips</h3>
+        <ul>
+          <li><a href="articles/chatgpt-study-tips.html">ChatGPT Study Tips</a></li>
+        </ul>
+      </a>
 
-  </article>
-</main>
+    </div>
+  </main>
 
-<footer>
-  &copy; 2025 AI Study Hub. All rights reserved.
-</footer>
+  <footer>
+    &copy; 2025 AI Study Hub. All rights reserved.
+  </footer>
 
 </body>
 </html>
