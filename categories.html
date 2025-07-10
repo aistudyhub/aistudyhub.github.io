@@ -1,193 +1,215 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AI Study Hub - Articoli e Categorie</title>
-<meta name="description" content="Scopri come l'intelligenza artificiale può migliorare lo studio e la produttività." />
-<meta name="keywords" content="AI, studio, studenti, tecnologia, apprendimento" />
-<meta name="author" content="AI Study Hub Team" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-<style>
-  /* Reset base */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #0d1117;
-    color: #c9d1d9;
-    line-height: 1.6;
-    padding: 1rem;
-  }
-  h1,h2,h3 {
-    color: #58a6ff;
-    font-weight: 700;
-  }
-  a {
-    text-decoration: none;
-    color: #58a6ff;
-    transition: color 0.3s ease;
-  }
-  a:hover {
-    color: #a0c8ff;
-  }
-
-  /* Container centrale */
-  .container {
-    max-width: 1100px;
-    margin: auto;
-  }
-
-  /* Sezione categorie */
-  .categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-  .category-card {
-    background: #161b22;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-  }
-  .category-card:hover {
-    transform: translateY(-6px);
-  }
-  .category-image {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    display: block;
-  }
-  .category-name {
-    padding: 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-align: center;
-    background-color: #0d1117;
-  }
-
-  /* Sezione articoli */
-  .articles {
-    margin-bottom: 3rem;
-  }
-  .articles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 2rem;
-  }
-  article {
-    background: #161b22;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  article:hover {
-    transform: translateY(-6px);
-  }
-  article img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-  }
-  article .content {
-    padding: 1rem;
-  }
-  article h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: #f0f6fc;
-  }
-  article p {
-    font-size: 1rem;
-    color: #8b949e;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categories - AI Study Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
     body {
-      padding: 0.5rem;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
     }
-  }
-</style>
+
+    header {
+      background-color: #161b22;
+      padding: 2rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #c9d1d9;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #c9d1d9;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100vh;
+      background: #161b22;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .mobile-nav.open {
+      right: 0;
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      color: #c9d1d9;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #58a6ff;
+      margin-bottom: 2rem;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .category-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 1rem;
+      transition: border 0.3s, transform 0.3s;
+    }
+
+    .category-card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-4px);
+    }
+
+    .category-card h3 {
+      font-size: 1rem;
+      color: #58a6ff;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .category-card svg {
+      width: 18px;
+      height: 18px;
+      fill: #58a6ff;
+      margin-right: 6px;
+    }
+
+    .category-card p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .category-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+      hamburger.addEventListener('click', () => {
+        mobileNav.classList.toggle('open');
+      });
+    });
+  </script>
 </head>
 <body>
-
-<div class="container">
-
-  <!-- Categorie -->
-  <section class="categories">
-    <a href="categories/chatgpt.html" class="category-card" aria-label="Categoria ChatGPT">
-      <img src="images/categories/chatgpt.jpg" alt="ChatGPT AI" class="category-image" />
-      <div class="category-name">ChatGPT</div>
+<header>
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="AI Study Hub Logo">
     </a>
-    <a href="categories/ai-tools.html" class="category-card" aria-label="Categoria AI Tools">
-      <img src="images/categories/ai-tools.jpg" alt="Strumenti AI" class="category-image" />
-      <div class="category-name">AI Tools</div>
-    </a>
-    <a href="categories/study-tips.html" class="category-card" aria-label="Categoria Study Tips">
-      <img src="images/categories/study-tips.jpg" alt="Consigli di Studio" class="category-image" />
-      <div class="category-name">Consigli di Studio</div>
-    </a>
-    <a href="categories/productivity.html" class="category-card" aria-label="Categoria Produttività">
-      <img src="images/categories/productivity.jpg" alt="Produttività" class="category-image" />
-      <div class="category-name">Produttività</div>
-    </a>
-  </section>
-
-  <!-- Articoli -->
-  <section class="articles">
-    <h2>Ultimi Articoli</h2>
-    <div class="articles-grid">
-
-      <!-- Duplicare questo blocco per ogni articolo nuovo -->
-      <a href="articles/how-ai-helps.html" aria-label="Leggi articolo How AI Helps Students Learn Faster">
-        <article>
-          <img src="images/articles/student-ai.jpg" alt="Studente con AI" />
-          <div class="content">
-            <h3>Come l'AI Aiuta gli Studenti a Imparare Più Velocemente</h3>
-            <p>Scopri come l'intelligenza artificiale può accelerare il tuo apprendimento.</p>
-          </div>
-        </article>
-      </a>
-
-      <a href="articles/top-5-ai-tools.html" aria-label="Leggi articolo Top 5 AI Tools for Homework Assistance">
-        <article>
-          <img src="images/articles/ai-tools.jpg" alt="Strumenti AI per compiti" />
-          <div class="content">
-            <h3>Top 5 Strumenti AI per l'Assistenza nei Compiti</h3>
-            <p>I migliori strumenti AI per aiutarti nei compiti e negli elaborati scolastici.</p>
-          </div>
-        </article>
-      </a>
-
-      <a href="articles/chatgpt-study.html" aria-label="Leggi articolo Using ChatGPT to Enhance Study Sessions">
-        <article>
-          <img src="images/articles/chatgpt-study.jpg" alt="Studiare con ChatGPT" />
-          <div class="content">
-            <h3>Usare ChatGPT per Migliorare le Sessioni di Studio</h3>
-            <p>Scopri come ChatGPT può aiutarti a rivedere, organizzare appunti e restare concentrato.</p>
-          </div>
-        </article>
-      </a>
-
-      <!-- Placeholder o articoli futuri -->
-      <article>
-        <img src="images/articles/placeholder.png" alt="Articolo in arrivo" />
-        <div class="content">
-          <h3>Prossimamente</h3>
-          <p>Nuovi contenuti AI e consigli per il tuo studio.</p>
-        </div>
-      </article>
-
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="categories.html">Categories</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-  </section>
-
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="categories.html">Categories</a>
 </div>
-
+<main>
+  <h2>Explore by Category</h2>
+  <div class="category-grid">
+    <div class="category-card">
+      <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-6.32 17.84l-1.41 1.41 1.41 1.41 1.41-1.41A10 10 0 1 0 12 2z"/></svg>AI for Studying</h3>
+      <p>Discover how AI can support your learning and boost your academic results.</p>
+      <img src="images/ai-study.jpg" alt="AI for Studying">
+    </div>
+    <div class="category-card">
+      <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2a7 7 0 0 0-6.96 6.26C.79 9.38 0 10.62 0 12c0 2.21 1.79 4 4 4h4v-2H4a2 2 0 0 1 0-4h4v-2H4a4 4 0 0 1 0-8h4a7 7 0 0 0 1 13.9V22h2v-8.1A7 7 0 0 0 9 2z"/></svg>AI Tools for Students</h3>
+      <p>Explore top tools that simplify studying, homework, and productivity.</p>
+      <img src="images/ai-tools.jpg" alt="AI Tools for Students">
+    </div>
+    <div class="category-card">
+      <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4h18v2H3zm0 5h18v2H3zm0 5h12v2H3zm0 5h8v2H3z"/></svg>AI & Education Trends</h3>
+      <p>Stay informed on how AI is transforming the future of education.</p>
+      <img src="images/education-trends.jpg" alt="AI & Education Trends">
+    </div>
+    <div class="category-card">
+      <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 4v3h14V4H5zm0 5v2h14V9H5zm0 4v6h14v-6H5z"/></svg>Study Guides & Tips</h3>
+      <p>Learn how to get the most out of AI with study strategies and guides.</p>
+      <img src="images/study-guides.jpg" alt="Study Guides & Tips">
+    </div>
+  </div>
+</main>
 </body>
+</html>
 </html>
