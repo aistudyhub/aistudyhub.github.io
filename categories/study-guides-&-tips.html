@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Guides & Tips - AI Study Hub</title>
+  <meta name="description" content="Find effective study guides and tips to boost your learning and academic success." />
+  <meta name="keywords" content="study guides, study tips, learning strategies, academic success, study techniques" />
+  <meta name="author" content="AI Study Hub" />
+  <meta property="og:title" content="Study Guides & Tips - AI Study Hub" />
+  <meta property="og:description" content="Find effective study guides and tips to boost your learning and academic success." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tuosito.com/study-guides-tips.html" />
+  <meta property="og:image" content="https://www.tuosito.com/images/study-guides.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+      hamburger.addEventListener('click', () => {
+        mobileNav.classList.toggle('open');
+      });
+    });
+  </script>
+  <link href="../categories-styles.css" rel="stylesheet"/>
+  <style>
+    .guide-card {
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      background-color: #161b22;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .guide-card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-3px);
+      cursor: pointer;
+    }
+    .guide-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #58a6ff;
+    }
+    .guide-card p {
+      margin-bottom: 0.75rem;
+      color: #c9d1d9;
+    }
+    a.guide-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href="../index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="260" height="60" viewBox="0 0 260 60">
+          <rect width="260" height="60" rx="10" fill="#161b22"/>
+          <g transform="translate(20,10)">
+            <path d="M20 5a5 5 0 0 1 10 0v5a5 5 0 0 1-10 0V5z
+                     M10 20a5 5 0 0 1 10 0v5a5 5 0 0 1-10 0v-5z
+                     M30 20a5 5 0 0 1 10 0v5a5 5 0 0 1-10 0v-5z
+                     M20 35a5 5 0 0 1 10 0v5a5 5 0 0 1-10 0v-5z" 
+                  fill="white"/>
+            <line x1="25" y1="10" x2="25" y2="20" stroke="white" stroke-width="2"/>
+            <line x1="15" y1="25" x2="25" y2="25" stroke="white" stroke-width="2"/>
+            <line x1="35" y1="25" x2="45" y2="25" stroke="white" stroke-width="2"/>
+            <line x1="25" y1="30" x2="25" y2="40" stroke="white" stroke-width="2"/>
+          </g>
+          <text x="80" y="38" font-family="Inter, sans-serif" font-size="24" fill="white" font-weight="700">
+            AI Study Hub
+          </text>
+        </svg>
+      </a>
+    </div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../categories.html">Categories</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="../index.html">Home</a>
+  <a href="../categories.html">Categories</a>
+  <a href="../about.html">About</a>
+</div>
+
+<main>
+  <h1>Study Guides & Tips</h1>
+  <p>Discover effective study guides and tips designed to help you learn smarter and achieve academic success.</p>
+
+  <a href="https://www.khanacademy.org/study-tips" target="_blank" class="guide-link" rel="noopener noreferrer">
+    <div class="guide-card">
+      <h3>Smart Study Strategies</h3>
+      <p>Explore proven study techniques to improve focus, retention, and time management.</p>
+    </div>
+  </a>
+
+  <a href="https://www.edutopia.org/article/6-effective-study-tips-students" target="_blank" class="guide-link" rel="noopener noreferrer">
+    <div class="guide-card">
+      <h3>Effective Study Tips for Students</h3>
+      <p>Learn practical tips that make your study sessions more productive and less stressful.</p>
+    </div>
+  </a>
+
+  <a href="https://www.opencolleges.edu.au/informed/features/study-tips/" target="_blank" class="guide-link" rel="noopener noreferrer">
+    <div class="guide-card">
+      <h3>Top Study Habits</h3>
+      <p>Discover habits that successful students develop to maximize their learning potential.</p>
+    </div>
+  </a>
+
+  <a href="https://www.collegeinfogeek.com/study-hacks/" target="_blank" class="guide-link" rel="noopener noreferrer">
+    <div class="guide-card">
+      <h3>Study Hacks for Better Learning</h3>
+      <p>Quick hacks and techniques to help you remember more and stress less during exams.</p>
+    </div>
+  </a>
+
+</main>
+</body>
+</html>
