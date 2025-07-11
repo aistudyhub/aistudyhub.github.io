@@ -23,12 +23,49 @@
     });
   </script>
   <link href="../categories-styles.css" rel="stylesheet"/>
+  <style>
+    /* Assicurati che il link copra tutta la card */
+    .tool-card {
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      background-color: #161b22;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .tool-card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-3px);
+      cursor: pointer;
+    }
+    .tool-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #58a6ff;
+    }
+    .tool-card p {
+      margin-bottom: 0.75rem;
+      color: #c9d1d9;
+    }
+    /* Link dentro la card */
+    .tool-card a {
+      color: #58a6ff;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    /* Per rendere tutto cliccabile */
+    a.tool-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 <header>
   <div class="container">
     <div class="logo">
-      <a href="index.html">
+      <a href="../index.html">
         <svg xmlns="http://www.w3.org/2000/svg" width="260" height="60" viewBox="0 0 260 60">
           <rect width="260" height="60" rx="10" fill="#161b22"/>
           <g transform="translate(20,10)">
@@ -49,8 +86,9 @@
       </a>
     </div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="categories.html">Categories</a>
+      <a href="../index.html">Home</a>
+      <a href="../categories.html">Categories</a>
+      <a href="../about.html">About</a>
     </nav>
     <div class="hamburger" id="hamburger">
       <div></div>
@@ -61,37 +99,42 @@
 </header>
 
 <div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="categories.html">Categories</a>
+  <a href="../index.html">Home</a>
+  <a href="../categories.html">Categories</a>
+  <a href="../about.html">About</a>
 </div>
 
 <main>
   <h1>AI for Studying</h1>
   <p>Scopri strumenti e risorse basate su intelligenza artificiale pensate per aiutarti a studiare meglio, risparmiare tempo e migliorare i risultati.</p>
 
-  <div class="tool-card">
-    <h3>Notion AI</h3>
-    <p>Organizza appunti e progetti scolastici con l'assistente AI di Notion. Ti aiuta a riassumere, riscrivere e generare idee.</p>
-    <a href="https://www.notion.so/product/ai" target="_blank">Visita Notion AI</a>
-  </div>
+  <a href="https://www.notion.so/product/ai" target="_blank" class="tool-link" rel="noopener noreferrer">
+    <div class="tool-card">
+      <h3>Notion AI</h3>
+      <p>Organizza appunti e progetti scolastici con l'assistente AI di Notion. Ti aiuta a riassumere, riscrivere e generare idee.</p>
+    </div>
+  </a>
 
-  <div class="tool-card">
-    <h3>Quizlet</h3>
-    <p>Crea e ripeti flashcard intelligenti generate con AI. Perfetto per esami, vocaboli e concetti chiave.</p>
-    <a href="https://quizlet.com" target="_blank">Vai a Quizlet</a>
-  </div>
+  <a href="https://quizlet.com" target="_blank" class="tool-link" rel="noopener noreferrer">
+    <div class="tool-card">
+      <h3>Quizlet</h3>
+      <p>Crea e ripeti flashcard intelligenti generate con AI. Perfetto per esami, vocaboli e concetti chiave.</p>
+    </div>
+  </a>
 
-  <div class="tool-card">
-    <h3>Grammarly</h3>
-    <p>Controlla grammatica e stile dei tuoi testi. L’AI ti aiuta a scrivere in modo chiaro, fluido e accademico.</p>
-    <a href="https://www.grammarly.com" target="_blank">Apri Grammarly</a>
-  </div>
+  <a href="https://www.grammarly.com" target="_blank" class="tool-link" rel="noopener noreferrer">
+    <div class="tool-card">
+      <h3>Grammarly</h3>
+      <p>Controlla grammatica e stile dei tuoi testi. L’AI ti aiuta a scrivere in modo chiaro, fluido e accademico.</p>
+    </div>
+  </a>
 
-  <div class="tool-card">
-    <h3>ChatGPT</h3>
-    <p>Ponigli domande, chiedi spiegazioni, genera schemi e appunti. Uno strumento tuttofare per lo studio!</p>
-    <a href="https://chat.openai.com" target="_blank">Usa ChatGPT</a>
-  </div>
+  <a href="https://chat.openai.com" target="_blank" class="tool-link" rel="noopener noreferrer">
+    <div class="tool-card">
+      <h3>ChatGPT</h3>
+      <p>Ponigli domande, chiedi spiegazioni, genera schemi e appunti. Uno strumento tuttofare per lo studio!</p>
+    </div>
+  </a>
 
 </main>
 </body>
